@@ -8,7 +8,7 @@ import AccountNavigation from "./AccountNavigation";
 
 const Tab = createBottomTabNavigator();
 
-export default function navigation() {
+export default function Navigation() {
   return (
     <Tab.Navigator>
       <Tab.Screen
