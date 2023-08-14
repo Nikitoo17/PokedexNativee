@@ -16,17 +16,6 @@ export default function Pokedex() {
       >
         Pokedex
       </Text>
-      <Text
-        style={{
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "red",
-          textAlign: "center",
-          color: "white",
-        }}
-      >
-        Pokedex
-      </Text>
     </SafeAreaView>
   );
 }
