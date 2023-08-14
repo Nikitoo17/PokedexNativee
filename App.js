@@ -1,7 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
-import Navigation from "../PokeDex/src/navigation/Navigation";
+import Navigation from "./src/navigation/Navigation";
 
 export default function App() {
   return (
