@@ -1,36 +1,27 @@
 import { Text } from "react-native";
-import React, { useState, useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import React, { useState, useEffect } from "react";
 import { getPokemonApi } from "../api/pokemon";
 
 export default function Pokedex() {
-  const [pokemon, setPokemon] = useState();
-
   useEffect(() => {
-    loadPokemon();
+    (async () => {
+      await loadPokemons();
+    })();
+    console.log("hola mundo");
   }, []);
 
-  const loadPokemon = async () => {
+  const loadPokemons = async () => {
     try {
-      await getPokemonApi();
+      const response = await getPokemonApi();
+      console.log(response);
     } catch (error) {
-      throw error;
+      console.error(error);
     }
   };
-
   return (
-    <SafeAreaView style={{ justifyContent: "space-between", height: 400 }}>
-      <Text
-        style={{
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "red",
-          textAlign: "center",
-          color: "white",
-        }}
-      >
-        Pokedex
-      </Text>
+    <SafeAreaView>
+      <Text>Pokedex</Text>
     </SafeAreaView>
   );
 }
