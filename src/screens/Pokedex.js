@@ -4,7 +4,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { getPokemonApi } from "../api/pokemon";
 
 export default function Pokedex() {
-  useEffect(() => {}, []);
+  const [pokemon, setPokemon] = useState();
+
+  useEffect(() => {
+    loadPokemon();
+  }, []);
 
   const loadPokemon = async () => {
     try {
