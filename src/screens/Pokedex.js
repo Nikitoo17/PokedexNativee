@@ -63,9 +63,15 @@ export default function Pokedex() {
               gap: 1,
               backgroundColor:
                 pokemon.type === "grass"
-                  ? "green"
+                  ? "rgba(0, 255, 0, 0.5)"
                   : pokemon.type === "fire"
-                  ? "red"
+                  ? "rgba(255, 0, 0, 0.5)"
+                  : pokemon.type === "water"
+                  ? "rgba(0, 0, 255, 0.5)"
+                  : pokemon.type === "bug"
+                  ? "rgba(0,255, 0, 1)"
+                  : pokemon.type === "normal"
+                  ? "rgb(200, 200, 200)"
                   : "white",
             }}
           >
@@ -73,13 +79,42 @@ export default function Pokedex() {
               source={{ uri: pokemon.imagen }}
               style={{ width: 200, height: 200 }}
             />
-            <Text style={{ color: "white", backgroundColor: "black" }}>
+            <Text
+              style={{
+                color: "white",
+                backgroundColor: "black",
+                fontSize: 25,
+                borderRadius: 20,
+                paddingHorizontal: 10,
+              }}
+            >
               {pokemon.name}
             </Text>
-            <Text style={{ color: "white", backgroundColor: "black" }}>
+            <Text
+              style={{
+                color: "white",
+                backgroundColor: "black",
+                position: "absolute",
+                top: -10,
+                right: -10,
+                fontSize: 25,
+                borderRadius: 99,
+                width: 40,
+                height: 40,
+                textAlign: "center",
+              }}
+            >
               {pokemon.order}
             </Text>
-            <Text style={{ color: "white", backgroundColor: "black" }}>
+            <Text
+              style={{
+                color: "white",
+                backgroundColor: "black",
+                fontSize: 18,
+                borderRadius: 20,
+                paddingHorizontal: 10,
+              }}
+            >
               {pokemon.type}
             </Text>
           </View>
