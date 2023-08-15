@@ -39,32 +39,39 @@ export default function Pokedex() {
 
   console.log(pokemons);
   return (
-    <SafeAreaView>
-      <ScrollView>
-        {pokemons &&
-          pokemons.map((pokemon, index) => (
-            <View
-              key={index}
-              style={{
-                marginBottom: 10,
-                alignItems: "center",
-                borderWidth: 1,
-                borderColor: "purple",
-                height: 140,
-                width: 140,
-                backgroundColor: "white",
-              }}
-            >
-              <Image
-                source={{ uri: pokemon.imagen }}
-                style={{ width: 60, height: 60 }}
-              />
-              <Text>{pokemon.name}</Text>
-              <Text>{pokemon.order}</Text>
-              <Text>{pokemon.type}</Text>
-            </View>
-          ))}
-      </ScrollView>
-    </SafeAreaView>
+    <ScrollView
+      style={{
+        backgroundColor: "white",
+        width: "100%",
+      }}
+      contentContainerStyle={{
+        alignItems: "center",
+      }}
+    >
+      {pokemons &&
+        pokemons.map((pokemon, index) => (
+          <View
+            key={index}
+            style={{
+              marginBottom: 10,
+              alignItems: "center",
+              borderWidth: 1,
+              borderColor: "purple",
+              borderRadius: 20,
+              height: 140,
+              width: 140,
+              backgroundColor: "white",
+            }}
+          >
+            <Image
+              source={{ uri: pokemon.imagen }}
+              style={{ width: 60, height: 60 }}
+            />
+            <Text>{pokemon.name}</Text>
+            <Text>{pokemon.order}</Text>
+            <Text>{pokemon.type}</Text>
+          </View>
+        ))}
+    </ScrollView>
   );
 }
