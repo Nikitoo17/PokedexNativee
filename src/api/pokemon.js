@@ -11,3 +11,11 @@ export async function getPokemonApi() {
     throw error;
   }
 }
+export async function getPokemonDetailByUrlApi() {
+  try {
+    const response = await axios.get(url);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
