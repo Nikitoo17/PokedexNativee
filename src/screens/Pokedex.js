@@ -48,11 +48,11 @@ export default function Pokedex() {
               style={{
                 marginBottom: 10,
                 alignItems: "center",
-                borderWidth: 1, // Ancho del borde
+                borderWidth: 1,
                 borderColor: "purple",
                 height: 140,
                 width: 140,
-                backgroundColor: "red",
+                backgroundColor: "white",
               }}
             >
               <Image
