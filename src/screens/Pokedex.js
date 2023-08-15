@@ -58,18 +58,30 @@ export default function Pokedex() {
               borderWidth: 1,
               borderColor: "purple",
               borderRadius: 20,
-              height: 140,
-              width: 140,
-              backgroundColor: "white",
+              height: 300,
+              width: 300,
+              gap: 1,
+              backgroundColor:
+                pokemon.type === "grass"
+                  ? "green"
+                  : pokemon.type === "fire"
+                  ? "red"
+                  : "white",
             }}
           >
             <Image
               source={{ uri: pokemon.imagen }}
-              style={{ width: 60, height: 60 }}
+              style={{ width: 200, height: 200 }}
             />
-            <Text>{pokemon.name}</Text>
-            <Text>{pokemon.order}</Text>
-            <Text>{pokemon.type}</Text>
+            <Text style={{ color: "white", backgroundColor: "black" }}>
+              {pokemon.name}
+            </Text>
+            <Text style={{ color: "white", backgroundColor: "black" }}>
+              {pokemon.order}
+            </Text>
+            <Text style={{ color: "white", backgroundColor: "black" }}>
+              {pokemon.type}
+            </Text>
           </View>
         ))}
     </ScrollView>
