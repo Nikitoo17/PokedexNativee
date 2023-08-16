@@ -2,6 +2,7 @@ import { View, Text, ScrollView, Image, Button } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React, { useState, useEffect } from "react";
 import { getPokemonApi, getPokemonDetailsByUrlApi } from "../api/pokemon";
+import PokemonList from "../components/PokemonList";
 
 export default function Pokedex() {
   const [pokemons, setPokemons] = useState([]);
@@ -38,6 +39,7 @@ export default function Pokedex() {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <PokemonList pokemons={pokemons} />
       {/* <ScrollView
         style={{
           backgroundColor: "white",
