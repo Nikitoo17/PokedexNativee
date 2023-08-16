@@ -38,7 +38,7 @@ export default function Pokedex() {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <ScrollView
+      {/* <ScrollView
         style={{
           backgroundColor: "white",
           width: "100%",
@@ -118,8 +118,8 @@ export default function Pokedex() {
               </Text>
             </View>
           ))}
-      </ScrollView>
-      <View
+      </ScrollView> */}
+      {/* <View
         style={{
           flexDirection: "row",
           alignItems: "center",
@@ -130,7 +130,7 @@ export default function Pokedex() {
         <Button title="Anterior" />
         <Text>1</Text>
         <Button title="Siguiente" />
-      </View>
+      </View> */}
     </SafeAreaView>
   );
 }
