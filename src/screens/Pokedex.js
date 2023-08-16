@@ -14,10 +14,12 @@ export default function Pokedex() {
     console.log("Empieza");
   }, []);
 
-  const loadPokemons = async () => {
+  async function loadPokemons() {
     try {
+      console.log("entro");
       const response = await getPokemonApi();
       const pokemonArray = [];
+      console.log("salioo");
 
       for await (const pokemon of response.results) {
         const pokemonDetails = await getPokemonDetailsByUrlApi(pokemon.url);
@@ -27,18 +29,17 @@ export default function Pokedex() {
           name: pokemonDetails.name,
           type: pokemonDetails.types[0].type.name,
           order: pokemonDetails.order,
-          imagen:
-            pokemonDetails.sprites.other["official-artwork"].front_default,
+          image: pokemonDetails.sprites.other["official-artwork"].front_default,
         });
       }
       setPokemons([...pokemons, ...pokemonArray]);
     } catch (error) {
       console.error(error);
     }
-  };
+  }
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView>
       <PokemonList pokemons={pokemons} />
       {/* <ScrollView
         style={{
