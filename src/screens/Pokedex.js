@@ -14,27 +14,25 @@ export default function Pokedex() {
   }, []);
 
   async function loadPokemons() {
-    try {
-      console.log("entro");
-      const response = await getPokemonApi();
-      const pokemonArray = [];
-      console.log("salioo");
+    console.log("entro");
+    const response = await getPokemonApi();
+    const pokemonArray = [];
+    console.log("salioo");
 
-      for await (const pokemon of response.results) {
-        const pokemonDetails = await getPokemonDetailsByUrlApi(pokemon.url);
-
-        pokemonArray.push({
-          id: pokemonDetails.id,
-          name: pokemonDetails.name,
-          type: pokemonDetails.types[0].type.name,
-          order: pokemonDetails.order,
-          image: pokemonDetails.sprites.other["official-artwork"].front_default,
-        });
-      }
-      setPokemons([...pokemons, ...pokemonArray]);
-    } catch (error) {
-      console.error(error);
+    for (const pokemon of response.results) {
+      const pokemonDetails = await getPokemonDetailsByUrlApi(pokemon.url);
+      console.log(pokemonDetails.name);
+      pokemonArray.push({
+        id: pokemonDetails.id,
+        name: pokemonDetails.name,
+        type: pokemonDetails.types[0].type.name,
+        order: pokemonDetails.order,
+        // image: pokemonDetails.sprites.other["official-artwork"].front_default,
+        image: pokemonDetails.sprites.other["home"].front_default,
+      });
     }
+
+    setPokemons([...pokemonArray]);
   }
 
   return (
