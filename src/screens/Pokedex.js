@@ -41,7 +41,7 @@ export default function Pokedex() {
       <PokemonList
         pokemons={pokemons}
         loadPokemons={loadPokemons}
-        nextUrl={nextUrl}
+        isNext={nextUrl}
       />
       {/* <ScrollView
         style={{
