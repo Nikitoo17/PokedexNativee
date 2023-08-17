@@ -23,7 +23,6 @@ export default function Pokedex() {
 
     for (const pokemon of response.results) {
       const pokemonDetails = await getPokemonDetailsByUrlApi(pokemon.url);
-      console.log(pokemonDetails.name);
       pokemonArray.push({
         id: pokemonDetails.id,
         name: pokemonDetails.name,
@@ -39,7 +38,11 @@ export default function Pokedex() {
 
   return (
     <SafeAreaView>
-      <PokemonList pokemons={pokemons} loadPokemons={loadPokemons} />
+      <PokemonList
+        pokemons={pokemons}
+        loadPokemons={loadPokemons}
+        nextUrl={nextUrl}
+      />
       {/* <ScrollView
         style={{
           backgroundColor: "white",
