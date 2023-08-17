@@ -11,8 +11,8 @@ export default function PokedexNavigation() {
         name="Pokedex"
         component={Pokedex}
         options={{
-          title: "Pokedex",
-          headerTitleAlign: "center",
+          title: "",
+          headerTransparent: true,
         }}
       />
     </Stack.Navigator>
