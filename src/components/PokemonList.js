@@ -1,9 +1,14 @@
-import { ActivityIndicator, FlatList, StyleSheet } from "react-native";
+import {
+  ActivityIndicator,
+  FlatList,
+  StyleSheet,
+  Platform,
+} from "react-native";
 import React from "react";
 import PokemonCard from "./PokemonCard";
 
 export default function PokemonList(props) {
-  const { pokemons, loadPokemons } = props;
+  const { pokemons, loadPokemons, nextUrl } = props;
 
   const loadMore = () => {
     loadPokemons();
@@ -18,10 +23,12 @@ export default function PokemonList(props) {
       keyExtractor={(pokemon) => String(pokemon.id)}
       renderItem={({ item }) => <PokemonCard pokemon={item} />}
       contentContainerStyle={styles.flatListContentContainer}
-      onEndReached={loadMore}
+      onEndReached={nextUrl && loadMore}
       onEndReachedThreshold={0.1}
       ListFooterComponent={
-        <ActivityIndicator size="large" style={styles.spinner} color="red" />
+        nextUrl && (
+          <ActivityIndicator size="large" style={styles.spinner} color="red" />
+        )
       }
     />
   );
