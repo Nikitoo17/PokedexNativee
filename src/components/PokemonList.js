@@ -3,10 +3,10 @@ import React from "react";
 import PokemonCard from "./PokemonCard";
 
 export default function PokemonList(props) {
-  const { pokemons } = props;
+  const { pokemons, loadPokemons } = props;
 
   const loadMore = () => {
-    console.log("cargando");
+    loadPokemons();
   };
 
   return (
@@ -20,6 +20,9 @@ export default function PokemonList(props) {
       contentContainerStyle={styles.flatListContentContainer}
       onEndReached={loadMore}
       onEndReachedThreshold={0.1}
+      ListFooterComponent={
+        <ActivityIndicator size="large" style={styles.spinner} color="red" />
+      }
     />
   );
 }
@@ -28,5 +31,9 @@ const styles = StyleSheet.create({
   flatListContentContainer: {
     paddingHorizontal: 5,
     fontSize: 16,
+  },
+  spinner: {
+    marginTop: 20,
+    marginBottom: 60,
   },
 });

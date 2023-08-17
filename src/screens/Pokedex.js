@@ -5,6 +5,7 @@ import PokemonList from "../components/PokemonList";
 
 export default function Pokedex() {
   const [pokemons, setPokemons] = useState([]);
+  const [nextUrl, setNextUrl] = useState(null);
 
   useEffect(() => {
     (async () => {
@@ -15,7 +16,8 @@ export default function Pokedex() {
 
   async function loadPokemons() {
     console.log("entro");
-    const response = await getPokemonApi();
+    const response = await getPokemonApi(nextUrl);
+    setNextUrl(response.next);
     const pokemonArray = [];
     console.log("salioo");
 
@@ -32,12 +34,12 @@ export default function Pokedex() {
       });
     }
 
-    setPokemons([...pokemonArray]);
+    setPokemons([...pokemons, ...pokemonArray]);
   }
 
   return (
     <SafeAreaView>
-      <PokemonList pokemons={pokemons} />
+      <PokemonList pokemons={pokemons} loadPokemons={loadPokemons} />
       {/* <ScrollView
         style={{
           backgroundColor: "white",
