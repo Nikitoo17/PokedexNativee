@@ -22,7 +22,7 @@ export default function Pokemon(props) {
 
   return (
     <View>
-      <Text>Pokemon</Text>
+      <Text>{pokemon}</Text>
     </View>
   );
 }
