@@ -5,8 +5,6 @@ import PokemonCard from "./PokemonCard";
 export default function PokemonList(props) {
   const { pokemons } = props;
 
-  console.log(pokemons);
-
   return (
     <FlatList
       styles={{ height: "100%", width: "100%" }}
