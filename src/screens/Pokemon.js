@@ -13,6 +13,7 @@ export default function Pokemon(props) {
     (async () => {
       try {
         const response = await getPokemonDetailsApi(params.id);
+        console.log(response.species.name);
         setPokemon(response);
       } catch (error) {
         navigation.goBack();
@@ -20,9 +21,11 @@ export default function Pokemon(props) {
     })();
   }, [params]);
 
+  console.log(pokemon && pokemon.species.name);
+
   return (
     <View>
-      <Text>{pokemon}</Text>
+      <Text>{pokemon ? pokemon.species.name : "no cargo"}</Text>
     </View>
   );
 }
