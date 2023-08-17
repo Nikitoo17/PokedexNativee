@@ -9,12 +9,6 @@ export async function getPokemonApi(endPointUrl) {
   console.log("Response status:", response.status); // Verifica el estado de la respuesta
 
   return response.data;
-  // const response = await fetch(endPointUrl || url);
-  // console.log("Response status:", response.status); // Agrega esta línea para verificar el estado de la respuesta
-
-  // const result = await response.json();
-  // console.log("Result:", result); // Agrega esta línea para verificar el resultado
-  // return result;
 }
 export async function getPokemonDetailsByUrlApi(url) {
   try {
@@ -23,5 +17,15 @@ export async function getPokemonDetailsByUrlApi(url) {
     return result;
   } catch (error) {
     throw error;
+  }
+}
+export async function getPokemonDetailsApi(id) {
+  try {
+    const url = `${API_HOST}pokemon/${id}`;
+    console.log(url);
+    const response = await axios.get(url);
+    return response.data;
+  } catch (error) {
+    console.log(error);
   }
 }
