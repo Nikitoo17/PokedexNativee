@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { getPokemonDetailsApi } from "../api/pokemon";
 import getColorByPokemonType from "../utils/getColorByPokemonType";
 import Header from "../components/Pokemon/Header";
+import Type from "../components/Pokemon/Type";
 
 export default function Pokemon(props) {
   const {
@@ -20,7 +21,6 @@ export default function Pokemon(props) {
     (async () => {
       try {
         const response = await getPokemonDetailsApi(params.id);
-        console.log(response.species.name);
         setPokemon(response);
       } catch (error) {
         navigation.goBack();
@@ -31,7 +31,6 @@ export default function Pokemon(props) {
   if (!pokemon) {
     return null;
   }
-  console.log(pokemon && pokemon.types[0].type.name);
 
   return (
     <View>
@@ -41,6 +40,7 @@ export default function Pokemon(props) {
         image={pokemon.sprites.other.home.front_default}
         type={pokemon.types[0].type.name}
       />
+      <Type types={pokemon.types} />
       {/* <Image
         source={{ uri: pokemon && pokemon.sprites.other.home.front_default }}
         style={styles.image}
