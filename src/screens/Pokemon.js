@@ -25,11 +25,6 @@ export default function Pokemon(props) {
     })();
   }, [params]);
 
-  const pokemonColor = getColorByPokemonType(
-    pokemon ? pokemon.types[0].type.name : ""
-  );
-  const bgStyles = { backgroundColor: pokemonColor, ...styles.bgStyles };
-
   if (!pokemon) {
     return null;
   }
