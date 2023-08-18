@@ -9,7 +9,7 @@ export default function Header(props) {
   return (
     <View>
       <SafeAreaView>
-        <View>
+        <View style={styles.contentImage}>
           <Image source={{ uri: image }} style={styles.image} />
         </View>
       </SafeAreaView>
@@ -18,6 +18,12 @@ export default function Header(props) {
 }
 
 const styles = StyleSheet.create({
+  contentImage: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    top: 100,
+  },
   image: {
     width: 300,
     height: 300,
