@@ -14,10 +14,6 @@ export default function Pokemon(props) {
 
   const [pokemon, setPokemon] = useState(null);
 
-  const pokemonColor = getColorByPokemonType(
-    pokemon ? pokemon.types[0].type.name : ""
-  );
-  const bgStyles = { backgroundColor: pokemonColor, ...styles.bgStyles };
   useEffect(() => {
     (async () => {
       try {
@@ -28,6 +24,11 @@ export default function Pokemon(props) {
       }
     })();
   }, [params]);
+
+  const pokemonColor = getColorByPokemonType(
+    pokemon ? pokemon.types[0].type.name : ""
+  );
+  const bgStyles = { backgroundColor: pokemonColor, ...styles.bgStyles };
 
   if (!pokemon) {
     return null;
