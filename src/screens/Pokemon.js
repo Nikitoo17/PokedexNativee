@@ -1,7 +1,6 @@
-import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
+import { ScrollView } from "react-native";
 import React, { useState, useEffect } from "react";
 import { getPokemonDetailsApi } from "../api/pokemon";
-import getColorByPokemonType from "../utils/getColorByPokemonType";
 import Header from "../components/Pokemon/Header";
 import Type from "../components/Pokemon/Type";
 import Stats from "../components/Pokemon/Stats";
