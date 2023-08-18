@@ -3,10 +3,10 @@ import axios from "axios";
 export async function getPokemonApi(endPointUrl) {
   const url = `${API_HOST}pokemon?limit=20&offset=0`;
   console.log(endPointUrl);
-  console.log("Fetching from:", endPointUrl || url); // Agrega esta línea para verificar la URL
+  console.log("realizando peticion a:", endPointUrl || url);
 
   const response = await axios.get(endPointUrl || url);
-  console.log("peticion realizada:", url);
+  console.log("peticion realizada:", endPointUrl || url);
 
   return response.data;
 }
