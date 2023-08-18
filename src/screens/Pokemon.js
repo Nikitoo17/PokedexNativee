@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
 import React, { useState, useEffect } from "react";
 import { getPokemonDetailsApi } from "../api/pokemon";
 import getColorByPokemonType from "../utils/getColorByPokemonType";
@@ -33,7 +33,7 @@ export default function Pokemon(props) {
   }
 
   return (
-    <View>
+    <ScrollView>
       <Header
         name={pokemon.name}
         order={pokemon.order}
@@ -47,7 +47,7 @@ export default function Pokemon(props) {
       />
       <Text>{pokemon ? pokemon.species.name : "no cargo"}</Text> */}
       {/* <Text>{pokemon ? pokemon.species.name : "no cargo"}</Text> */}
-    </View>
+    </ScrollView>
   );
 }
 const styles = StyleSheet.create({
