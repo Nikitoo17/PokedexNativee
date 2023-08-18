@@ -47,17 +47,3 @@ export default function Pokemon(props) {
     </ScrollView>
   );
 }
-const styles = StyleSheet.create({
-  image: {
-    position: "absolute",
-    bottom: 7,
-    right: 8,
-    width: 300,
-    height: 300,
-  },
-  bgStyles: {
-    flex: 1,
-    borderRadius: 15,
-    padding: 10,
-  },
-});
