@@ -6,8 +6,6 @@ import { Platform } from "react-native";
 export default function PokemonList(props) {
   const { pokemons, loadPokemons, isNext } = props;
 
-  console.log(pokemons);
-
   const loadMore = () => {
     loadPokemons();
   };
