@@ -44,12 +44,6 @@ export default function Pokemon(props) {
       />
       <Type types={pokemon.types} />
       <Stats stats={pokemon.stats} />
-      {/* <Image
-        source={{ uri: pokemon && pokemon.sprites.other.home.front_default }}
-        style={styles.image}
-      />
-      <Text>{pokemon ? pokemon.species.name : "no cargo"}</Text> */}
-      {/* <Text>{pokemon ? pokemon.species.name : "no cargo"}</Text> */}
     </ScrollView>
   );
 }
