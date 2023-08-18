@@ -15,11 +15,9 @@ export default function Pokedex() {
   }, []);
 
   async function loadPokemons() {
-    console.log("entro");
     const response = await getPokemonApi(nextUrl);
     setNextUrl(response.next);
     const pokemonArray = [];
-    console.log("salioo");
 
     for (const pokemon of response.results) {
       const pokemonDetails = await getPokemonDetailsByUrlApi(pokemon.url);
