@@ -13,12 +13,18 @@ import { useNavigation } from "@react-navigation/native";
 export default function PokemonCard(props) {
   const { pokemon } = props;
   const navigation = useNavigation();
+  console.log(pokemon);
 
   const pokemonColor = getColorByPokemonType(pokemon.type);
   const bgStyles = { backgroundColor: pokemonColor, ...styles.bgStyles };
 
   const goToPokemon = () => {
-    navigation.navigate("Pokemon", { id: pokemon.id, name: pokemon.name });
+    navigation.navigate("Pokemon", {
+      id: pokemon.id,
+      name: pokemon.name,
+      image: pokemon.image,
+      type: pokemon.type,
+    });
   };
 
   return (
