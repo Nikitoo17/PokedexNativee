@@ -12,8 +12,11 @@ export async function getPokemonApi(endPointUrl) {
 }
 export async function getPokemonDetailsByUrlApi(url) {
   try {
+    console.log("realizando peticion a:", url);
+
     const response = await fetch(url);
     const result = await response.json();
+    console.log("peticion realizada:", url);
     return result;
   } catch (error) {
     throw error;
