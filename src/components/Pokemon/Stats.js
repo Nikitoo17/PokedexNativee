@@ -4,6 +4,12 @@ import { capitalize } from "lodash";
 
 export default function Stats(props) {
   const { stats } = props;
+  const barStyles = (num) => {
+    return {
+      backgroundColor: "red",
+      width: `${num}%`,
+    };
+  };
   return (
     <View style={styles.content}>
       <Text style={styles.title}>Stats</Text>
@@ -14,7 +20,10 @@ export default function Stats(props) {
               <Text style={styles.statName}>{capitalize(item.stat.name)}</Text>
             </View>
             <View style={styles.blockInfo}>
-              <Text style={styles.statName}>{item.base_stat}</Text>
+              <Text style={styles.number}>{item.base_stat}</Text>
+              <View style={styles.bgBar}>
+                <View style={[styles.bar, barStyles(item.base_stat)]}></View>
+              </View>
             </View>
           </View>
         ))}
@@ -44,5 +53,24 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: "gray",
   },
-  blockInfo: {},
+  blockInfo: {
+    width: "70%",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  number: {
+    width: "12%",
+    fontSize: 12,
+  },
+  bgBar: {
+    backgroundColor: "gray",
+    width: "88%",
+    height: 5,
+    borderRadius: 20,
+    overflow: "hidden",
+  },
+  bar: {
+    height: 5,
+    borderRadius: 20,
+  },
 });
