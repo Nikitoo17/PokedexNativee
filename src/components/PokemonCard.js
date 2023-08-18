@@ -24,6 +24,7 @@ export default function PokemonCard(props) {
       name: pokemon.name,
       image: pokemon.image,
       type: pokemon.type,
+      order: pokemon.order,
     });
   };
 
