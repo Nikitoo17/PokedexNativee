@@ -20,6 +20,7 @@ export default function Pokedex() {
     setNextUrl(response.next);
     const pokemonArray = [];
     console.log("salioo");
+    console.log(response.results);
 
     for (const pokemon of response.results) {
       const pokemonDetails = await getPokemonDetailsByUrlApi(pokemon.url);
