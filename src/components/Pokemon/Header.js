@@ -57,10 +57,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    top: 100,
+    top: 30,
   },
   image: {
     width: 300,
     height: 300,
+    resizeMode: "contain",
   },
 });
