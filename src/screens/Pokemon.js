@@ -13,6 +13,8 @@ export default function Pokemon(props) {
 
   const [pokemon, setPokemon] = useState(null);
 
+  useEffect(() => {}, []);
+
   useEffect(() => {
     (async () => {
       try {
