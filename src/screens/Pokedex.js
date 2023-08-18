@@ -16,7 +16,6 @@ export default function Pokedex() {
 
   async function loadPokemons() {
     const response = await getPokemonApi(nextUrl);
-    setNextUrl(response.next);
     const pokemonArray = [];
 
     for (const pokemon of response.results) {
@@ -32,6 +31,7 @@ export default function Pokedex() {
     }
 
     setPokemons([...pokemons, ...pokemonArray]);
+    setNextUrl(response.next);
   }
 
   return (
