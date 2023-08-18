@@ -26,6 +26,8 @@ export default function Pokemon(props) {
   return (
     <View>
       <Text>{pokemon ? pokemon.species.name : "no cargo"}</Text>
+      <Text>{pokemon ? pokemon.species.name : "no cargo"}</Text>
+      <Text>{pokemon ? pokemon.species.name : "no cargo"}</Text>
     </View>
   );
 }
