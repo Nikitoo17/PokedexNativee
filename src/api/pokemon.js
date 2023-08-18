@@ -6,7 +6,7 @@ export async function getPokemonApi(endPointUrl) {
   console.log("Fetching from:", endPointUrl || url); // Agrega esta línea para verificar la URL
 
   const response = await axios.get(endPointUrl || url);
-  console.log("Response status:", response.status); // Verifica el estado de la respuesta
+  console.log("peticion realizada:", url);
 
   return response.data;
 }
@@ -22,8 +22,9 @@ export async function getPokemonDetailsByUrlApi(url) {
 export async function getPokemonDetailsApi(id) {
   try {
     const url = `${API_HOST}pokemon/${id}`;
-    console.log(url);
+    console.log("realizando peticion a:", url);
     const response = await axios.get(url);
+    console.log("peticion realizada:", url);
     return response.data;
   } catch (error) {
     console.log(error);
