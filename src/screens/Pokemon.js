@@ -1,4 +1,4 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 import React, { useState, useEffect } from "react";
 import { getPokemonDetailsApi } from "../api/pokemon";
 
@@ -27,7 +27,9 @@ export default function Pokemon(props) {
     <View>
       <Text>{pokemon ? pokemon.species.name : "no cargo"}</Text>
       {/* <Text>{pokemon ? pokemon.species.name : "no cargo"}</Text> */}
-      <Image source={{ uri: pokemon.sprites.other.home.front_default }} />
+      <Image
+        source={{ uri: pokemon && pokemon.sprites.other.home.front_default }}
+      />
     </View>
   );
 }
