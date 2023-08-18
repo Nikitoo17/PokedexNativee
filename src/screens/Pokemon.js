@@ -27,7 +27,7 @@ export default function Pokemon(props) {
     <View>
       <Text>{pokemon ? pokemon.species.name : "no cargo"}</Text>
       {/* <Text>{pokemon ? pokemon.species.name : "no cargo"}</Text> */}
-      {/* <Image source={{ uri: pokemon.sprites.other.home.front_default }} /> */}
+      <Image source={{ uri: pokemon.sprites.other.home.front_default }} />
     </View>
   );
 }
