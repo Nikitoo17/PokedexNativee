@@ -5,8 +5,9 @@ import { capitalize } from "lodash";
 export default function Stats(props) {
   const { stats } = props;
   const barStyles = (num) => {
+    const color = num < 49 ? "red" : num > 100 ? "blue" : "green";
     return {
-      backgroundColor: "red",
+      backgroundColor: color,
       width: `${num}%`,
     };
   };
